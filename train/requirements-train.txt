@@ -1,0 +1,4 @@
+# requirements-train.txt
+pandas
+scikit-learn
+joblib

@@ -1,0 +1,5 @@
+# serve/requirements.txt
+scikit-learn
+joblib
+flask
+numpy
