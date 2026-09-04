@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: monitor
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: monitor
+  template:
+    metadata:
+      labels:
+        app: monitor
+    spec:
+      containers:
+      - name: monitor
+        image: monitor:latest
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: SERVE_URL
+          value: "http://my-housing-app-service/health"
+        - name: INTERVAL_SECONDS
+          value: "10"
